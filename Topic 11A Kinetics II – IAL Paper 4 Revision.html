@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Topic 11A Kinetics II – IAL Revision</title>
+<style>
+:root{--bg:#fbf8f3;--fg:#1d2433;--card:#fff;--mut:#5b6475;--ln:#e3ddd2;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14171f;--fg:#eceef4;--card:#1e2330;--mut:#a3abbd;--ln:#323a4d}}
+:root[data-theme="dark"]{--bg:#14171f;--fg:#eceef4;--card:#1e2330;--mut:#a3abbd;--ln:#323a4d}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,"Segoe UI",sans-serif}
+.w{max-width:980px;margin:auto;padding:16px}
+header{background:linear-gradient(120deg,#e6007e,#f47321 60%,#2b5aa8);color:#fff;border-radius:16px;padding:18px 20px}
+h1{margin:0;font-size:1.45rem}.by{margin:4px 0 0;font-weight:700;font-size:1.05rem}header small{opacity:.9}
+#nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:14px 0}
+#nav button{text-align:left;background:var(--card);color:var(--fg);border:2px solid var(--ln);border-top:6px solid var(--c);border-radius:12px;padding:8px;cursor:pointer;font:inherit}
+#nav button.on{border-color:var(--c);box-shadow:0 3px 10px #0003}
+#nav span{display:block;font-weight:700}#nav small{display:block;color:var(--mut);font-size:.75rem;line-height:1.25}
+section h2{color:var(--c);margin:8px 0}section h2 small{font-size:.7rem;color:var(--mut)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+.card{background:var(--card);border-radius:12px;padding:10px 12px;border-top:5px solid #e6007e;animation:up .5s both}
+.card:nth-child(5n+2){border-color:#f47321}.card:nth-child(5n+3){border-color:#2b5aa8}.card:nth-child(5n+4){border-color:#1aa37a}.card:nth-child(5n+5){border-color:#8e44ad}
+.card h3{margin:0 0 4px;font-size:1rem}.card p{margin:0;font-size:.93rem}
+@keyframes up{from{opacity:0;transform:translateY(12px)}}
+.tip{background:#fff3c4;color:#4a3b00;border-radius:10px;padding:8px 12px;margin:10px 0;font-weight:600}
+.an,.q{background:var(--card);border-radius:12px;padding:10px 12px;margin:10px 0;border:1px solid var(--ln)}
+canvas{width:100%;max-width:640px;display:block;background:var(--bg);border-radius:8px}
+input[type=range]{width:100%;max-width:640px}#cap{margin:2px 0;color:var(--mut);font-size:.9rem}
+.st,.hint{background:var(--bg);border-left:4px solid var(--c);padding:4px 8px;margin:5px 0;border-radius:4px;animation:up .4s}
+.hint{border-color:#f47321}
+button.b{background:var(--c);color:#fff;border:0;border-radius:8px;padding:6px 12px;margin:4px 6px 0 0;cursor:pointer;font:inherit}button.b:disabled{opacity:.6}
+</style></head><body><div class="w">
+<header><h1>⚗️ Edexcel IAL Chemistry · Paper 4 · Topic 11A Kinetics II</h1><p class="by">Prepared by Teacher Aasia Khawar</p><small>Storyboard revision · animations · solve-it-yourself exercises · Solved: <b id="pg">0</b></small></header>
+<div id="nav"></div><div id="main"></div></div>
+<script>
+const $=s=>document.querySelector(s);
+const R=[
+{t:"Measuring the rate",e:"⏱️",c:"#e6007e",sp:"11.1(i), 11.3",story:"Scene 1: you can’t study speed until you can measure it",
+S:[["What is rate?","rate = change in concentration ÷ time. Product: +Δ[P]/Δt. Reactant: −Δ[R]/Δt (the − keeps rate positive). Unit: mol dm⁻³ s⁻¹."],
+["Choose the property that changes","① gas volume ② mass loss ③ colour (colorimetry) ④ titrate quenched samples ⑤ pH ⑥ conductivity. Others: dilatometry, polarimetry, refractive index."],
+["Gas volume","Gas syringe is more precise. Collection over water fails for very soluble gases (SO₂, and CO₂ partly dissolves)."],
+["Mass loss","Best for a dense gas such as CO₂. Low-density H₂ gives tiny mass changes → big uncertainty. Cotton wool stops spray."],
+["Colorimetry & titration","Colorimeter: quantitative, needs a coloured species (I₂). Titration: take aliquots, quench (ice or NaHCO₃), titrate. Weakness: time delay."]],
+tip:"Ask: gas made? coloured? ions changing? Nothing visible → titrate aliquots.",an:["Rate = gradient of a graph","Slider = concentration. The orange tangent is the instantaneous rate."],
+Q:[{q:"State a suitable technique for: (a) Mg + dil. H₂SO₄ (b) ethyl ethanoate + NaOH (c) H₂(g) + I₂(g) → 2HI(g).",h:"Look for gas, ions or colour.",s:["(a) H₂ gas is made → measure gas volume (syringe) at time intervals.","(b) No gas or colour. OH⁻ is replaced by CH₃COO⁻ → follow conductivity (or titrate quenched aliquots with acid).","(c) Moles of gas 2 → 2 so pressure is constant. I₂ vapour is purple → colorimetry."]},
+{q:"Why is measuring mass change poor for Mg + dilute sulfuric acid?",h:"What is the gas and how dense is it?",s:["The gas is H₂ (Mr = 2, very low density).","Mass lost is tiny, comparable to the balance uncertainty → large % error."]},
+{q:"CaCO₃ + HCl: gas collected in a measuring cylinder or gas syringe – which is better?",h:"Think precision and solubility.",s:["The gas syringe is more precise.","CO₂ is fairly soluble in water, so over water some gas is lost.","Choose the gas syringe."]}]},
+{t:"Rate equations",e:"🧮",c:"#f47321",sp:"11.1(ii–v, vii)",story:"Scene 2: the maths of speed – orders and k",
+S:[["Rate equation","rate = k[A]ᵐ[B]ⁿ with m, n = 0, 1 or 2. Found ONLY by experiment, not from the balanced equation (unless elementary)."],
+["Order","Order 0: no effect. Order 1: double [A] → ×2. Order 2: double [A] → ×4. Overall order = m + n + …"],
+["Rate constant k","Changes only with temperature (and catalyst). Units: zero order mol dm⁻³ s⁻¹ · first s⁻¹ · second dm³ mol⁻¹ s⁻¹ · third dm⁶ mol⁻² s⁻¹."],
+["Rate-determining step","The slowest step controls overall rate (like the slowest student in a production line). Species in or before the RDS appear in the rate equation."]],
+tip:"Units of k: rearrange k = rate ÷ concentrations and cancel.",an:["How doubling [A] changes rate","Slider = factor by which [A] is multiplied. Compare the three orders."],
+Q:[{q:"rate = k[S₂O₈²⁻][I⁻]. (a) Order w.r.t. each ion? (b) Overall order?",h:"Read the powers.",s:["Both powers are 1.","(a) first order in S₂O₈²⁻ and first order in I⁻.","(b) overall = 1 + 1 = 2."]},
+{q:"rate = k[P][Q]². Effect on rate if (a) [P] doubled (b) [Q] doubled (c) both doubled?",h:"Apply 2ⁿ to each.",s:["(a) 2¹ → rate ×2.","(b) 2² → rate ×4.","(c) 2 × 4 → rate ×8."]},
+{q:"R doubled → rate ×4; S doubled → no change; T doubled → rate ×2. Orders, rate equation, overall order?",h:"2ⁿ = factor.",s:["R: 2ⁿ = 4 → order 2. S: no change → order 0. T: 2ⁿ = 2 → order 1.","rate = k[R]²[T] (S is absent).","Overall order = 2 + 1 = 3."]}]},
+{t:"Determining orders",e:"📈",c:"#2b5aa8",sp:"11.1(ii, vi), 11.2, 11.4, 11.5",story:"Scene 3: be a detective – read orders from data",
+S:[["Continuous method","One mixture, sampled over time → concentration–time graph. Constant half-life → first order. Half-life doubling → second. Straight line down → zero order."],
+["Half-life","t½ = time for concentration to halve. First order: k = 0.693 ÷ t½. Doubling the initial concentration does not change t½."],
+["Rate from a graph","Draw a tangent, large triangle: rate = −gradient (conc–time) or +gradient (volume–time). e.g. 1.60 ÷ 1470 = 1.09×10⁻³ mol dm⁻³ s⁻¹."],
+["Initial-rate method","Several mixtures, change ONE concentration at a time. Rate ∝ 1/t. Plot 1/t vs [A]: flat = 0 · straight line through origin = 1 · curve = 2 (confirm with 1/t vs [A]² straight)."]],
+tip:"Check axis labels and units – same shape can mean different things.",an:["Half-life ticking away","Slider = half-life. Each equal time step halves the concentration."],
+Q:[{q:"Graph of P (decomposition by heating, start ≈ 5.8 units; ≈ 2.9 at ~450 s; ≈ 1.45 at ~900 s). (a) Define half-life. (b) Show first order. (c) Effect of doubling [P]. (d) k. (e) Rate equation. (f) [P] at 800 s and rate. (g) Direct method.",h:"Read t½ from several starting points.",s:["(a) Time taken for the concentration of a reactant to fall to half its initial value.","(b) 5.8 → 2.9 takes ≈ 450 s; 2.9 → 1.45 takes ≈ 450 s again. Constant half-life → first order.","(c) No effect: half-life is unchanged for a first-order reaction.","(d) k = 0.693 ÷ 450 ≈ 1.5×10⁻³ s⁻¹.","(e) rate = k[P].","(f) (i) [P] at 800 s ≈ 1.7 units (read from graph). (ii) rate = 1.5×10⁻³ × 1.7 ≈ 2.6×10⁻³ units s⁻¹.","(g) Draw a tangent at 800 s and calculate −gradient."]},
+{q:"5Br⁻ + BrO₃⁻ + 6H⁺ → 3Br₂ + 3H₂O. Exp1 (0.10, 0.10, 0.10) rate 1.2×10⁻³; Exp2 (0.10, 0.20, 0.10) 2.4×10⁻³; Exp3 (0.30, 0.10, 0.10) 3.6×10⁻³; Exp4 (0.10, 0.20, 0.20) 9.6×10⁻³. Find orders, rate equation, k.",h:"Compare two experiments where ONE concentration changes.",s:["Exp1→2: [BrO₃⁻] ×2, rate ×2 → first order in BrO₃⁻.","Exp1→3: [Br⁻] ×3, rate ×3 → first order in Br⁻.","Exp2→4: [H⁺] ×2, rate ×4 → second order in H⁺.","(b) rate = k[Br⁻][BrO₃⁻][H⁺]²","(c) k = 1.2×10⁻³ ÷ (0.10 × 0.10 × 0.10²) = 12 dm⁹ mol⁻³ s⁻¹."]},
+{q:"Initial rates: (0.1, 0.1) → 0.02; (0.1, 0.2) → 0.04; (0.2, 0.1) → 0.04; (0.2, 0.2) → 0.08 for [A], [B]. Find the rate equation.",h:"Double one at a time.",s:["[A] ×2 (exp 1→3), rate ×2 → first order in A.","[B] ×2 (exp 1→2), rate ×2 → first order in B.","rate = k[A][B], overall order 2."]}]},
+{t:"Rate equations & mechanisms",e:"🔗",c:"#1aa37a",sp:"11.6–11.9, CP9A, CP9B",story:"Scene 4: the slow step is the bottleneck",
+S:[["Elementary vs multi-step","Elementary = one collision, so rate equation matches the equation (NO + O₃ → rate = k[NO][O₃]). If they don’t match, there are several steps with intermediates."],
+["Order ↔ RDS","Orders show how many particles are in or before the RDS: rate = k[NO₂]² → two NO₂ in RDS. The steps must add to the overall equation."],
+["Halogenoalkanes","Tertiary: rate = k[RX] → SN1: slow ionisation to carbocation (intermediate), then fast OH⁻ attack. Primary: rate = k[RX][OH⁻] → SN2: one step, transition state."],
+["Iodination of propanone (CP9A)","Zero order in I₂, first in propanone and H⁺: rate = k[CH₃COCH₃][H⁺]. Quench aliquots with NaHCO₃, titrate with thiosulfate."],
+["Testing a mechanism","A mechanism that fits data is consistent, not proven. Test: wider concentration range, detect intermediates (NMR), isotopes (C–D stronger → slower)."]],
+tip:"Zero order in X → X is not in or before the RDS.",an:["The bottleneck","Slider = speed of slow step 1. Products form only as fast as that step."],
+Q:[{q:"CH₃CHO + HCN → CH₃CH(OH)CN; rate = k[CH₃CHO][CN⁻][H⁺]⁰. Mechanism 1: step 1 CH₃CHO + H⁺; step 2 + CN⁻. Mechanism 2: step 1 CH₃CHO + CN⁻; step 2 + H⁺. (a) Which fits? (b) RDS?",h:"Is H⁺ in or before the RDS?",s:["Order 0 in H⁺ → H⁺ is NOT in or before the RDS.","(a) Mechanism 2 fits: H⁺ only enters in step 2, after the RDS.","(b) Step 1: CH₃CHO + CN⁻ (rate = k[CH₃CHO][CN⁻])."]},
+{q:"2H₂ + 2NO → 2H₂O + N₂, rate = k[H₂][NO]². Mechanism: 2NO → N₂O₂ (fast); N₂O₂ + H₂ → N₂O + H₂O (slow); N₂O + H₂ → N₂ + H₂O (fast). Consistent?",h:"Write the rate from the slow step.",s:["Slow step: rate = k[N₂O₂][H₂].","N₂O₂ comes from fast step 1, so [N₂O₂] ∝ [NO]².","→ rate = k[H₂][NO]² ✔ and the steps add to the overall equation. Consistent."]},
+{q:"Cl₂ → 2Cl• (slow); H₂ + Cl• → HCl + H• (fast); H• + Cl• → HCl (fast). (a) Overall equation (b) rate equation (c) double [Cl₂] (d) double [H₂]",h:"Cancel intermediates.",s:["(a) Cl₂ + H₂ → 2HCl.","(b) rate = k[Cl₂].","(c) Rate doubles.","(d) No effect (H₂ reacts after the RDS)."]},
+{q:"CH₃Cl + OH⁻ is second order overall with equimolar amounts, but first order in a large excess of OH⁻. Explain.",h:"What happens to [OH⁻]?",s:["rate = k[CH₃Cl][OH⁻], second order overall (SN2).","In large excess, [OH⁻] hardly changes → effectively constant.","rate = k′[CH₃Cl] with k′ = k[OH⁻] → appears first order."]},
+{q:"HBr + O₂ → Br₂; steps: HBr + O₂ → HBrO₂; HBrO₂ + HBr → 2HBrO; HBrO + HBr → Br₂ + H₂O (×2). rate = k[HBr][O₂]. (a) RDS? (b) Overall?",h:"Which step contains HBr and O₂ only?",s:["(a) Step 1: it contains exactly HBr and O₂, matching the rate equation.","(b) Step 3 occurs twice: 4HBr + O₂ → 2Br₂ + 2H₂O."]}]},
+{t:"Activation energy & catalysis",e:"⛰️",c:"#8e44ad",sp:"11.1(viii–ix), 11.11, CP10",story:"Scene 5: dig a tunnel through the energy hill",
+S:[["Activation energy","Minimum energy colliding particles need to react = energy to reach the transition state."],
+["Catalyst","Provides an alternative route with lower Eₐ and is unchanged at the end. More particles have E ≥ new Eₐ."],
+["Homogeneous","Same phase as reactants. Fe²⁺/Fe³⁺ in S₂O₈²⁻ + 2I⁻ (Fe²⁺ → Fe³⁺ → Fe²⁺). Cl• from CFCs destroys O₃. H⁺ in propanone iodination."],
+["Heterogeneous","Different phase (solid). Adsorption → reaction → desorption. Fe in Haber, V₂O₅ in Contact, 3-way converter. Poisoning (S on Ni, Pb on converter). Promoters (K₂O, Al₂O₃) create active sites."],
+["Autocatalysis","A product catalyses the reaction: MnO₄⁻ + ethanedioic acid, Mn²⁺ is the catalyst. Slow start, speeds up, then slows (S-shaped curve)."]],
+tip:"Don’t assume an S-shaped curve is always autocatalysis (solid penetration, heat).",an:["Catalyst lowers the hill","Slider = catalyst strength. The ball takes the lower route."],
+Q:[{q:"Explain why only a small amount of a homogeneous catalyst is needed.",h:"Is it used up?",s:["It takes part in a step but is regenerated in a later step.","So the same particles are reused many times."]},
+{q:"Why can a catalytic converter not be used with leaded petrol?",h:"Think poisoning.",s:["Lead and lead(II) compounds are adsorbed on the catalyst surface.","They block active sites (catalyst poisoning) → catalyst stops working."]}]},
+{t:"Temperature & rate constant",e:"🌡️",c:"#d62828",sp:"11.10",story:"Scene 6: hotter molecules, bigger k – Arrhenius",
+S:[["Why heating speeds reactions","Mainly a larger fraction of molecules with E ≥ Eₐ. More frequent collisions is a minor effect (ignore)."],
+["Arrhenius","k = A e^(−Eₐ/RT). A = pre-exponential factor (collision frequency and orientation). T in kelvin. The equation is given in exams."],
+["Straight-line form","ln k = −(Eₐ/R)(1/T) + ln A. Plot ln k (y) against 1/T (x): gradient = −Eₐ/R, intercept = ln A. Eₐ = −gradient × 8.31 J mol⁻¹."]],
+tip:"Convert J → kJ at the end and quote units of Eₐ.",an:["Maxwell–Boltzmann & Eₐ","Slider = temperature. Shaded area = molecules able to react."],
+Q:[{q:"Table: T = 300 K, ln k = −5.27, 1/T = 0.00333; T = 340 K, ln k = −3.50, 1/T = 0.00294. Find Eₐ.",h:"Gradient = Δy ÷ Δx.",s:["gradient = (−3.50 − (−5.27)) ÷ (0.00294 − 0.00333) ≈ −4.5×10³ K.","Eₐ = −gradient × R = 4.5×10³ × 8.31 ≈ 3.7×10⁴ J mol⁻¹.","Eₐ ≈ 37.5 kJ mol⁻¹ (answers within ±2 are fine)."]},
+{q:"Why does the ln k vs 1/T line slope downwards?",h:"Sign of gradient.",s:["Gradient = −Eₐ/R, and Eₐ > 0, so it is negative.","Higher T → smaller 1/T → larger k."]}]}];
+let cur=0,done=new Set();const tot=R.reduce((a,r)=>a+r.Q.length,0);
+function nav(){$("#nav").innerHTML=R.map((r,i)=>`<button class="${i==cur?"on":""}" style="--c:${r.c}" onclick="show(${i})"><b>11A.${i+1}</b> ${r.e}<span>${r.t}</span><small>${r.story}</small></button>`).join("")}
+function show(i){cur=i;nav();const r=R[i];$("#main").innerHTML=`<section style="--c:${r.c}"><h2>${r.e} 11A.${i+1} ${r.t} <small>Spec ${r.sp}</small></h2><div class="cards">${r.S.map(s=>`<div class="card"><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join("")}</div><div class="tip">💡 Exam tip: ${r.tip}</div><div class="an"><h3>🎬 ${r.an[0]}</h3><canvas id="cv" width="640" height="230"></canvas><input type="range" id="sl" min="0" max="1" step=".01" value=".5"><p>${r.an[1]}</p><p id="cap"></p></div><h3>✏️ Exercise: solve it step by step</h3>${r.Q.map((q,j)=>`<div class="q" id="q${i}_${j}"><b>Q${j+1}.</b> ${q.q}<div class="hint" hidden>💭 ${q.h}</div>${q.s.map(x=>`<div class="st" hidden>➜ ${x}</div>`).join("")}<button class="b" onclick="this.closest('.q').querySelector('.hint').hidden=false">Hint</button><button class="b" onclick="nx(this)">Next step ▶</button></div>`).join("")}</section>`;
+$("#q"+i+"_0")&&0;[...document.querySelectorAll(".q")].forEach(q=>{if(done.has(q.id)){q.querySelectorAll(".st").forEach(s=>s.hidden=false);q.querySelector("button.b:last-child").textContent="✔ Solved";q.querySelector("button.b:last-child").disabled=true}})}
+function nx(b){const q=b.closest(".q"),h=[...q.querySelectorAll(".st[hidden]")];if(h.length)h[0].hidden=false;if(h.length<=1){b.textContent="✔ Solved";b.disabled=true;done.add(q.id);$("#pg").textContent=done.size+" / "+tot}else b.textContent="Next step ▶ ("+(h.length-1)+" left)"}
+const ax=(g,f,W,H)=>{g.strokeStyle=f;g.lineWidth=1;g.beginPath();g.moveTo(40,10);g.lineTo(40,H-30);g.lineTo(W-10,H-30);g.stroke();g.lineWidth=2.5};
+const A=[
+(g,t,p,W,H,c,f)=>{const k=1+p*5,u=(t/5)%1,X=x=>40+x*(W-60),Y=v=>H-30-v*(H-60);ax(g,f,W,H);g.strokeStyle=c;g.beginPath();for(let i=0;i<=u*100;i++){const x=i/100;g[i?"lineTo":"moveTo"](X(x),Y(1-Math.exp(-k*x)))}g.stroke();const s=k*Math.exp(-k*u),v=1-Math.exp(-k*u);g.strokeStyle="#f47321";g.beginPath();g.moveTo(X(u-.15),Y(v-.15*s));g.lineTo(X(u+.15),Y(v+.15*s));g.stroke();g.fillStyle=f;g.fillText("volume of gas",46,18);g.fillText("time",W-40,H-12);g.beginPath();g.arc(X(u),Y(v),5,0,7);g.fill();return "Gradient (rate) now = "+s.toFixed(2)+" – steepest at the start, flatter as reactant is used up."},
+(g,t,p,W,H,c,f)=>{const m=1+p*2,v=[1,m,m*m],n=["zero","first","second"],cs=["#2b5aa8","#1aa37a","#e6007e"],z=1+.03*Math.sin(t*3);v.forEach((y,i)=>{const h=y/9*(H-70)*z,x=70+i*190;g.fillStyle=cs[i];g.fillRect(x,H-30-h,110,h);g.fillStyle=f;g.fillText(n[i]+" order: ×"+y.toFixed(1),x,H-10)});return "[A] ×"+m.toFixed(1)+" → rate ×1 (zero), ×"+m.toFixed(1)+" (first), ×"+(m*m).toFixed(1)+" (second)."},
+(g,t,p,W,H,c,f)=>{const th=.12+p*.2,u=(t/5)%1,X=x=>40+x*(W-60),Y=v=>H-30-v*(H-60);ax(g,f,W,H);g.strokeStyle=c;g.beginPath();for(let i=0;i<=u*100;i++){const x=i/100;g[i?"lineTo":"moveTo"](X(x),Y(Math.exp(-Math.LN2*x/th)))}g.stroke();[1,2,3].forEach(n=>{if(u>=n*th){const y=Math.pow(.5,n);g.setLineDash([4,4]);g.strokeStyle=f;g.lineWidth=1;g.beginPath();g.moveTo(X(n*th),Y(0));g.lineTo(X(n*th),Y(y));g.lineTo(X(0),Y(y));g.stroke();g.setLineDash([]);g.lineWidth=2.5;g.fillStyle=f;g.fillText("t½ ×"+n+" → "+["½","¼","⅛"][n-1],X(n*th)+5,Y(y)-6)}});return "Equal time steps halve the concentration: constant half-life = first order."},
+(g,t,p,W,H,c,f)=>{const s=.4+p*3,T=t%20;g.fillStyle=c;g.fillRect(20,70,110,90);g.fillStyle="#1aa37a";g.fillRect(W-170,70,110,90);g.fillStyle="#fff";g.fillText("Step 1 SLOW",30,120);g.fillText("Step 2 FAST",W-160,120);for(let n=Math.max(0,Math.floor((T-3)*s));n<=T*s;n++){const x=130+(T-n/s)*160;if(x<W-170){g.fillStyle=f;g.beginPath();g.arc(x,115,6,0,7);g.fill()}}g.fillStyle=f;g.fillText("Products: "+Math.floor(T*s),W-150,50);return "Output = speed of the slow step ("+s.toFixed(1)+"/s). Speeding up step 2 changes nothing."},
+(g,t,p,W,H,c,f)=>{const y=(u,h)=>H-50-100*h*Math.exp(-Math.pow((u-.5)/.14,2))+40/(1+Math.exp(-12*(u-.65))),hc=1-.55*p,u=(t/4)%1;[[1,f,1],[hc,c,2]].forEach(a=>{g.strokeStyle=a[1];g.lineWidth=a[2]+.5;g.beginPath();for(let i=0;i<=100;i++)g[i?"lineTo":"moveTo"](20+i/100*(W-40),y(i/100,a[0]));g.stroke()});g.fillStyle=c;g.beginPath();g.arc(20+u*(W-40),y(u,hc)-8,8,0,7);g.fill();g.fillStyle=f;g.fillText("uncatalysed Eₐ (grey)",W/2-70,y(.5,1)-8);g.fillText("catalysed Eₐ (colour)",W/2-70,y(.5,hc)+18);return "Eₐ is lowered by "+Math.round(55*p)+"% of the barrier – more collisions succeed."},
+(g,t,p,W,H,c,f)=>{const s=.6+p*.9,Ea=2.2,X=e=>40+e/6*(W-60),Y=v=>H-30-v*280,F=e=>e*Math.exp(-e/s)/(s*s);ax(g,f,W,H);g.strokeStyle=c;g.beginPath();for(let i=0;i<=120;i++)g[i?"lineTo":"moveTo"](X(i*.05),Y(F(i*.05)));g.stroke();g.fillStyle=c+"88";g.beginPath();g.moveTo(X(Ea),Y(0));for(let e=Ea;e<=6;e+=.05)g.lineTo(X(e),Y(F(e)));g.lineTo(X(6),Y(0));g.fill();g.strokeStyle=f;g.setLineDash([5,4]);g.lineWidth=1;g.beginPath();g.moveTo(X(Ea),Y(0));g.lineTo(X(Ea),20);g.stroke();g.setLineDash([]);g.lineWidth=2.5;g.fillStyle=f;g.fillText("Eₐ",X(Ea)+4,28);g.fillText("energy",W-50,H-12);return "Higher T → "+Math.round((1+Ea/s)*Math.exp(-Ea/s)*100)+"% of molecules have E ≥ Eₐ → bigger k."}];
+function loop(t){const c=$("#cv");if(c){const g=c.getContext("2d"),f=getComputedStyle(document.body).color;g.clearRect(0,0,640,230);g.font="13px system-ui";g.lineWidth=2.5;$("#cap").textContent=A[cur](g,t/1000,+$("#sl").value,640,230,R[cur].c,f)}requestAnimationFrame(loop)}
+show(0);requestAnimationFrame(loop);
+</script></body></html>
